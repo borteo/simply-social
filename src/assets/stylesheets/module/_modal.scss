@@ -1,0 +1,84 @@
+$modal-width: 575px;
+
+.modal {
+  position: absolute;
+  top: 150px;
+  opacity: 0;
+  visibility: hidden;
+  left: 50%;
+  margin-left: -($modal-width / 2);
+  width: $modal-width;
+  border-radius: .2em;
+  background: #dee1e5;
+  padding: 10px 25px;
+  @include transition(all, .5s, ease-in-out);
+
+  h2 {
+    color: #70767f;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  textarea {
+    background: #FFF;
+    font-size: 20px;
+    height: 90px;
+    padding: 5px 12px;
+    resize: none;
+    width: 100%;
+    border-radius: .2em;
+  }
+
+  .quick-actions-modal {
+    font-family: ProximaNova-Light;
+    margin: 0;
+    padding: 0 0 20px;
+    overflow: hidden;
+    a {
+      color: #a7abb2;
+    }
+  }
+
+  .icon-close {
+    position: absolute;
+    right: -30px;
+    top: -20px;
+  }
+
+  &.active {
+    top: 185px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.submit-form {
+  float: right;
+  position: relative;
+  top: -5px;
+}
+
+.blur-background {
+  position: absolute;
+  width: 101vw;
+  height: 101vh;
+  top: -5px;   /* blur shows edges */
+  left: -5px;
+  background: #000;
+  opacity: .8;
+  display: none;
+  position: fixed;
+  &.active {
+    display: block;
+  }
+}
+
+
+
+body.blur > div,
+body.blur > header {
+  @include filter(blur(5px));
+}
+body.blur > .modal {
+  @include filter(none);
+}

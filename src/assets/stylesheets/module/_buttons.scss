@@ -1,18 +1,16 @@
-.btn-theme {
-  color: #ffffff;
-  background-color: #74cfae;
-  border-color: transparent;
-}
-
 .btn {
-  padding: 10px 30px;
+  padding: 2px 20px;
   margin-bottom: 0;
   font-size: 18px;
   border: 5px solid transparent;
   border-radius: 0px;
+  @include user-select(none);
+  border-radius: .2em;
+  font-size: 14px;
 }
 
-.lead {
-  letter-spacing: 1px;
-}
 
+.submit-btn {
+  background-color: #00b286;
+  color: #FFF;
+}

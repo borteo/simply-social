@@ -3,15 +3,18 @@
 @import "base/mixins";
 @import "base/colors";
 @import "base/fonts";
-@import "base/sprites";
 
 @import "base/normalize";
 @import "base/base";
 
 @import "layout/navigation";
-@import "layout/main";
+@import "layout/intro";
 @import "layout/content";
 @import "layout/footer";
 
+@import "layout/settings";
+
+@import "module/sprites";
 @import "module/buttons";
 @import "module/tooltip";
+@import "module/modal";

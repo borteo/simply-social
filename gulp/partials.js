@@ -19,7 +19,7 @@ gulp.task('partials', function () {
   }))
   .pipe($.angularTemplatecache('templateCacheHtml.js', {
     root: 'views',
-    module: 'instaOrganizer'
+    module: 'simplySocial'
   }))
   .pipe(gulp.dest(paths.tmp + '/partials/'));
 });

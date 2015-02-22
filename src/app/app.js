@@ -1,14 +1,17 @@
 /**
-* app.js
+* app.js - simplySocial
 * -----------
 * Angular app routes
+*
+* Author: Matt Borgato
+* Date: 22nd February 2015
+*
 */
 'use strict';
 
-angular.module('instaOrganizer', [
+angular.module('simplySocial', [
   'ngRoute',
-  'ngSanitize',
-  'angular-loading-bar'
+  'ngSanitize'
 ])
   .config(function( $routeProvider ) {
     $routeProvider
@@ -16,12 +19,9 @@ angular.module('instaOrganizer', [
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
-      .when('/photos/', {
-        templateUrl: 'views/photos.html',
-        controller: 'PhotosCtrl'
+      .when('/settings/', {
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl'
       })
       .otherwise('/');
-  })
-  .run(function( $rootScope ) {
-    $rootScope.currentUser = 'John Doe';
   });

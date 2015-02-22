@@ -3,12 +3,14 @@
 */
 'use strict';
 
-angular.module('instaOrganizer')
+angular.module('simplySocial')
   .controller('HomeCtrl', 
     function( 
-      $rootScope, 
+      $rootScope,
       $scope
     ) {
+
+    $rootScope.currentPage = 'Home';
 
     var modes = [ 'list', 'block' ];
 

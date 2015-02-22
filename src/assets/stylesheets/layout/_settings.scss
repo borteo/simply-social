@@ -1,0 +1,29 @@
+.settings {
+  margin-top: 100px;
+
+  h2 {
+    font-size: 30px;
+  } 
+
+  h3 {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #8d9199;
+  }
+
+  .profile-picture {
+    float: left;
+    border-radius: .2em;
+  }
+
+  .form {
+    margin-left: 110px;
+  }
+
+  input {
+    border: 1px solid #bec3cc;
+    border-radius: .2em;
+    display: block;
+  }
+
+}

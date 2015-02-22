@@ -21,7 +21,6 @@ gulp.task('minify-js', ['partials'], function() {
     paths.bower + '/angular/angular.js',
     paths.bower + '/angular-sanitize/angular-sanitize.js',
     paths.bower + '/angular-route/angular-route.js',
-    paths.bower + '/angular-loading-bar/build/loading-bar.js',
     paths.src   + '/app/app.js',
     paths.tmp   + '/partials/templateCacheHtml.js',
     paths.src   + '/app/utils/*.js',
