@@ -1,0 +1,44 @@
+header {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 10;
+  padding: 15px;
+  background: #262729;
+}
+
+.main-nav {
+  float: right;
+  li {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    margin-left: 25px;
+  }
+}
+
+.navbar-header {
+  width: 137px;
+  float: left;
+  h1 {
+    display: none;
+  }
+}
+
+nav.main-nav .main-search {
+  @include respond-to(520) {
+    display: none; 
+  }
+}
+
+.search-input {
+  border: 1px solid $dark-gray;
+  border-radius: .2em;
+  padding: 6px 10px;
+  width: 200px;
+}
+
+.avatar {
+  border-radius: .2em;
+}

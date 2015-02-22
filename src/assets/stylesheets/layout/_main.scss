@@ -1,0 +1,90 @@
+main,
+.main {
+  background: url('images/background.jpg') center center no-repeat;
+  background-size: cover;
+  height: 485px;
+  width: 100%;
+  position: relative;
+}
+
+.quick-actions {
+  font-family: ProximaNova-Light;
+  margin: 0 auto;
+  padding: 25px;
+  height: 155px;
+  width: 100%;
+  background: #00b286;
+  position: relative;
+  top: 180px;
+  border-radius: .2em;
+  opacity: .7;
+  color: #FFF;
+
+  .add-message {
+    color: #FFF;
+    font-size: 30px;
+    margin-top: 18px;
+    @include placeholder {
+      color: #FFF;
+    }
+    @include respond-to(575) {
+      font-size: 28px;
+    }
+  }
+
+  .add-media {
+    font-size: 14px;
+    bottom: 21px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    li {
+      display: inline-block;
+      margin-right: 40px;
+      line-height: 1.5;
+    }
+    span {
+     vertical-align: top;
+     margin-right: 10px; 
+    }
+  }
+}
+
+
+nav.nav-sections {
+  font-family: ProximaNova-Bold;
+  color: #FFF;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+
+  li {
+    display: inline-block;
+    padding-bottom: 14px;
+    width: 85px;
+    margin-right: 40px;
+    @include transition(all 0.1s ease-in);
+    &:active,
+    &.active {
+      border-bottom: 4px solid #00D193;
+    }
+    &:hover {
+      border-bottom: 4px solid darken(#00D193, 10%);
+    }
+    @include respond-to(575) {
+      margin-right: 10px;
+      font-size: .9em;
+      width: 70px;
+    }
+  }
+}
+
+.mode-view {
+  bottom: 18px;
+  position: absolute;
+  right: 0;
+  li {
+    margin-left: 15px;
+  }
+}
+

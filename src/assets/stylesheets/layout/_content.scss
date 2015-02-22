@@ -1,0 +1,108 @@
+.main-view {
+  margin-top: 50px;
+  min-height: 580px;
+}
+
+.thumbnail {
+  width: 75%;
+}
+
+.img-more-rounded {
+  border-radius: 40%;
+  width: 100%;
+}
+
+.post-container {
+  border: 1px solid $border-post;
+  border-radius: .2em;
+  font-size: 15px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  &.with-attachment {
+    height: 428px;
+  }
+  .post {
+    padding: 28px;
+    @include respond-to(575) {
+      padding: 18px;
+    }
+  }
+  h3 {
+    margin: 0;
+    color: #336;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 0.8;
+  }
+  p {
+    margin-top: 15px;
+  }
+  .expand {
+    color: #CCC;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 55px;
+  }
+  .icon-arrow-down {
+    @include transition(all 0.3s 0.4s ease);
+    &.active {
+      @include transform(rotate(180deg));
+    }
+  }
+
+  .post-details {
+    color: #ccc;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    span {
+      margin-right: 20px;
+    }
+    @include respond-to(575) {
+      top: 8px;
+      span {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: .2em;
+    float: left;
+  }
+
+  .message-wrapper {
+    margin-left: 55px;
+  }
+
+  .attachment {
+    position: absolute;
+    margin-top: 10px;
+    left: 0;
+  }
+
+  .replies {
+    background-color: #F9FAFC;
+  }
+  
+  .reply-post {
+    position: relative;
+    padding: 28px;
+    border-top: 1px solid #eef0f2;
+    @include respond-to(575) {
+      padding: 18px;
+    }
+  }
+
+  .reply-input {
+    border: 1px solid #dee1e5;
+    background: #FFF;
+    border-radius: .2em;
+    padding: 10px;
+    width: 100%;
+  }
+
+}

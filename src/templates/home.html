@@ -1,0 +1,116 @@
+<main class="main">
+  <div class="small-container">
+    <div class="quick-actions">
+      <input 
+        class="add-message" 
+        name="add-message" 
+        placeholder="What's on your mind?"
+      >
+      <ul class="add-media">
+        <li>
+          <a href="/#/"><span class="icon icon-photo"></span>Add Photo</a>
+        </li>
+        <li>
+          <a href="/#/"><span class="icon icon-video"></span>Add Video</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="nav-sections centered">
+      <ul>
+        <li class="active">
+          <a href="/#/">all posts</a>
+        </li>
+        <li>
+          <a href="/#/">photos</a>
+        </li>
+        <li>
+          <a href="/#/">videos</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="mode-view">
+      <ul>
+        <li 
+          class="icon" 
+          ng-class="activeMode == 'list' ? 'icon-list-active' : 'icon-list'"
+          ng-click="changeMode(0)"
+        ></li>
+        <li 
+          class="icon" 
+          ng-class="activeMode == 'block' ? 'icon-block-active' : 'icon-block'"
+          ng-click="changeMode(1)"
+        ></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<section class="small-container main-view">
+
+  <div 
+    ng-repeat="post in posts" 
+    class="post-container"
+    ng-class="post.image != null ? 'with-attachment' : ''"
+  > 
+    <div class="post">
+      <div class="post-details">
+        <span class="icon icon-reply"></span>
+        <span class="icon icon-like"></span>
+        <time>{{ post.time }}</time>
+      </div>
+      <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/men/{{ $index + 1 }}.jpg" />
+
+      <div class="message-wrapper">
+        <h3>
+          {{ post.author }}
+        </h3>
+        <p ng-bind-html="post.message"></p>
+      </div>
+
+      <p 
+        ng-show="post.expand" 
+        class="expand"
+        ng-click="toggleExpand( $index )"
+      >
+        <span ng-show="post.isCollapsed">Expand</span>
+        <span ng-hide="post.isCollapsed">Collapse</span>
+        <span 
+          class="icon icon-arrow-down" 
+          ng-class="post.isCollapsed == true ? '' : 'active'"
+        ></span>
+      </p>
+    </div>
+
+    <div class="replies" ng-hide="post.isCollapsed">
+      <div 
+        class="reply-post" 
+        ng-repeat="reply in post.replies"
+      >
+        <div class="post-details">
+          <span class="icon icon-reply"></span>
+          <span class="icon icon-like"></span>
+          <time>{{ reply.time }}</time>
+        </div>
+        <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/women/{{ $index + 1 }}.jpg" />
+        <div class="message-wrapper">
+          <h3>
+            {{ reply.author }}
+          </h3>
+          <p ng-bind-html="reply.message"></p>
+        </div>
+      </div>
+      <div class="reply-post">
+        <input class="reply-input" type="text" name="reply-input" placeholder="Reply..."/>
+      </div>
+
+    </div>
+
+    <img 
+      ng-if="post.image" 
+      class="attachment" 
+      ng-src="/images/{{ post.image }}" 
+    />
+  </div>
+
+</section>

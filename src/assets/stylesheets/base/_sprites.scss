@@ -1,0 +1,89 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-arrow-down {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -126px -37px;
+  width: 7px;
+  height: 4px;
+}
+.icon-arrow-up {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -119px -37px;
+  width: 7px;
+  height: 4px;
+}
+.icon-block-active {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -40px -47px;
+  width: 9px;
+  height: 9px;
+}
+.icon-block {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -119px -28px;
+  width: 9px;
+  height: 9px;
+}
+.icon-like {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -93px -28px;
+  width: 13px;
+  height: 13px;
+}
+.icon-list-active {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -31px -47px;
+  width: 9px;
+  height: 9px;
+}
+.icon-list {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -128px -28px;
+  width: 9px;
+  height: 9px;
+}
+.icon-logo {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: 0px 0px;
+  width: 137px;
+  height: 28px;
+}
+.icon-magnifier {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -73px -28px;
+  width: 20px;
+  height: 19px;
+}
+.icon-new-message {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: 0px -28px;
+  width: 31px;
+  height: 28px;
+}
+.icon-photo {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -52px -28px;
+  width: 21px;
+  height: 19px;
+}
+.icon-reply {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -106px -28px;
+  width: 13px;
+  height: 13px;
+}
+.icon-video {
+  background-image: url(/images/sprites/icon-sprite.png);
+  background-position: -31px -28px;
+  width: 21px;
+  height: 19px;
+}

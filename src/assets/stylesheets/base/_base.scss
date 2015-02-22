@@ -1,0 +1,92 @@
+html {
+  box-sizing: border-box;
+}
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+html, 
+body {
+  font: 13px/1.4 ProximaNova-Regular, Helvetica, Sans-serif;
+  background-color: #FFF;
+  color: #666;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+/* Paragraph & Typographic */
+p {
+  line-height: 1.5;
+  margin: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: #CCC;
+  word-wrap: break-word;
+  @include transition(color 0.1s ease-in, background 0.1s ease-in);
+}
+
+a:hover,
+a:focus {
+  color: #DDD;
+  outline: 0;
+  text-decoration: underline;
+}
+
+a:before,
+a:after {
+  @include transition(color 0.1s ease-in, background 0.1s ease-in);
+}
+
+.icon {
+  display: inline-block;
+  cursor: pointer;
+}
+.icon-input {
+  position: absolute;
+  right: 5px;
+  top: 7px;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  background: transparent;
+  border: none;
+}
+
+.container {
+  max-width: 1300px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.small-container {
+  width: 575px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+  position: relative;
+
+  @include respond-to(575) {
+    width: 300px;
+  }
+}

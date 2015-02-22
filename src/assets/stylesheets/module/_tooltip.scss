@@ -1,0 +1,72 @@
+$tooltip-bg: #f4f5f7;
+$tooltip-border: #dee1e5;
+
+.menu-tooltip {
+  cursor: pointer;
+  ul {
+    visibility: hidden;
+    opacity: 0;
+    left: -30px;
+    padding: 0;
+    position: absolute;
+    text-align: left;
+    top: 60px;
+    @include transition(all, .5s, ease-in);
+  }
+  li {
+    /* reset line-height */
+    line-height: 0;
+    margin: 0;
+    padding: 15px 30px 15px 18px;
+  }
+  .icon-arrow-down {
+    position: relative;
+    margin-left: 9px;
+    top: 15px;
+    vertical-align: top;
+  }
+}
+
+/* on hover isn't mobile-friendly
+* on click (using JS) would be better 
+*/
+.menu-tooltip:hover > ul,
+.menu-tooltip ul:hover {
+  visibility: visible;
+  opacity: 1;
+  top: 40px;
+}
+
+.tooltip {
+  background-color: $tooltip-bg;
+  border-radius: .4em;
+  padding: 12px 18px;
+
+  &::before {
+    border-bottom: 5px solid $tooltip-bg;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: "";
+    height: 0;
+    left: 70px;
+    position: absolute;
+    top: -5px;
+    width: 0;
+  }
+
+  a {
+    color: #70767f;
+    font-size: 12px;
+  }
+
+  li {
+    width: 100%;
+    border-bottom: 1px solid $tooltip-border;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+
+
+}

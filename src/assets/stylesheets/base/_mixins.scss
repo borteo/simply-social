@@ -1,0 +1,14 @@
+/* 
+ * Media queries mixin
+ *
+ * Usage:
+ *  ( within the rule definition )
+ *  @include respond-to(1300) {
+ *    padding: 0 $rs;
+ *   }
+ */
+@mixin respond-to($breakpoint) {
+  @media only screen and (max-width: $breakpoint + px) {
+    @content;
+  }
+}
