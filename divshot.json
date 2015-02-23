@@ -1,5 +1,5 @@
 {
-  "name": "simpy-social",
+  "name": "simply-social",
   "root": "./dist",
   "clean_urls": true,
   "error_page": "404.html"

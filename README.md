@@ -1,6 +1,8 @@
 # simply-social
 A simple social network
 
+Live demo: http://production.simply-social.divshot.io/#/
+
 Current version: 0.1
 
 ## Features
