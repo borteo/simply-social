@@ -56,13 +56,13 @@ Behind the scenes this will also call `bower install`. You should find that you 
 
 I have preconfigured the project with a simple development web server. 
 
-Firstly we have to build the application:
+Firstly we have to __build the application__:
 
 ```
 gulp build
 ```
 
-The simplest way to start the server is:
+The simplest way to __start the server__ is:
 
 ```
 gulp

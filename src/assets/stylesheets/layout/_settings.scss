@@ -1,5 +1,12 @@
+
 .settings {
-  margin-top: 100px;
+  margin-top: 30px;
+  border-top: 1px solid #dee1e5;
+
+  &:first-child {
+    margin-top: 100px;
+    border-top: none;
+  }
 
   h2 {
     font-size: 30px;
@@ -9,21 +16,121 @@
     text-transform: uppercase;
     font-size: 13px;
     color: #8d9199;
+    margin: 40px 0 20px;
   }
 
-  .profile-picture {
+  .row {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .radio .row {
+    margin-bottom: 10px;
+  }
+
+  .picture-container {
     float: left;
-    border-radius: .2em;
+    img {
+      border-radius: .2em;
+      margin-bottom: 5px;
+    }
   }
 
   .form {
-    margin-left: 110px;
+    margin-left: 135px;
   }
 
   input {
     border: 1px solid #bec3cc;
     border-radius: .2em;
-    display: block;
+    padding: 10px 40px;
+    font-size: 16px;
+    width: 365px;
+    color: #3f454d;
+  }
+
+
+  input[type=checkbox],
+  input[type=radio] {
+    visibility: hidden;
+    width: 30px;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  .icon-input {
+    left: 10px;
+    top: 11px;
+  }
+
+  .checkbox-switch,
+  .checkbox,
+  .radio {
+    font-size: 16px;
+    margin-top: 35px;
+  }
+
+  .checkbox-switch .row {
+    padding-left: 35px;
+  }
+  .radio .row,
+  .checkbox .row {
+   padding-left: 10px;
+  }
+
+  .checkbox-switch {
+    input[type=checkbox] + label::after {
+      @extend .icon-switch-off;
+      content: "";
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+    }
+
+    input[type=checkbox]:checked + label::after {
+      @extend .icon-switch-on;
+    }
+  }
+
+  .checkbox {
+    input[type=checkbox] + label::after {
+      @extend .icon-radio-off;
+      content: "";
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    input[type=checkbox]:checked + label::after {
+      @extend .icon-radio-on;
+    }
+  }
+
+  .radio {
+    input[type=radio] + label::after {
+      @extend .icon-radio-off;
+      content: "";
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+    input[type=radio]:checked + label::after {
+      @extend .icon-radio-on;
+    }
+  }
+
+  .save {
+    margin-top: 50px;
+    .btn {
+      padding: 5px 23px;
+    }
   }
 
 }
