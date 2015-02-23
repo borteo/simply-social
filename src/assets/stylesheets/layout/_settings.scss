@@ -109,7 +109,7 @@
       top: -1px;
       border-radius: 2em;
       background: #FFF;
-      @include transition (all, .2s, ease-in-out);
+      @include transition(all, .15s, ease-in-out);
     }
 
     input[type=checkbox]:checked + label::before {
@@ -136,16 +136,25 @@
       border-radius: 50%;
     }
 
-    input[type=checkbox]:checked + label::after,
-    input[type=radio]:checked + label::after {
+    input[type=checkbox] + label::after,
+    input[type=radio] + label::after {
       content: "";
-      width: 16px;
-      height: 16px;
+      width: 0px;
+      height: 0px;
       position: absolute;
-      left: 4px;
-      top: 2px;
+      left: 12px;
+      top: 10px;
       background: #00B286;
       border-radius: 50%;
+      @include transition(all, .15s, ease-in-out);
+    }
+
+    input[type=checkbox]:checked + label::after,
+    input[type=radio]:checked + label::after {
+      width: 16px;
+      height: 16px;
+      left: 4px;
+      top: 2px;
     }
   }
 
