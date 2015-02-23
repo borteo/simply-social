@@ -86,50 +86,66 @@
    padding-left: 10px;
   }
 
+  /* switch and radio w/ CSS3 */
   .checkbox-switch {
-    input[type=checkbox] + label::after {
-      @extend .icon-switch-off;
+    input[type=checkbox] + label::before {
       content: "";
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    input[type=checkbox]:checked + label::after {
-      @extend .icon-switch-on;
-    }
-  }
-
-  .checkbox {
-    input[type=checkbox] + label::after {
-      @extend .icon-radio-off;
-      content: "";
-      width: 40px;
-      height: 40px;
+      width: 50px;
+      height: 25px;
       position: absolute;
       left: 0;
       top: -2px;
+      border-radius: 2em;
+      background: #DEE1E5;
+      border: 1px solid #DEE1E5;
     }
 
+    input[type=checkbox] + label::after {
+      content: "";
+      width: 23px;
+      height: 23px;
+      position: absolute;
+      left: 1px;
+      top: -1px;
+      border-radius: 2em;
+      background: #FFF;
+      @include transition (all, .2s, ease-in-out);
+    }
+
+    input[type=checkbox]:checked + label::before {
+      background: #00B286;
+    }
     input[type=checkbox]:checked + label::after {
-      @extend .icon-radio-on;
+      left: 26px;
     }
   }
 
+  .checkbox,
   .radio {
-    input[type=radio] + label::after {
-      @extend .icon-radio-off;
+    input[type=checkbox] + label::before,
+    input[type=checkbox]:checked + label::before,
+    input[type=radio] + label::before,
+    input[type=radio]:checked + label::before {
       content: "";
-      width: 40px;
-      height: 40px;
+      width: 24px;
+      height: 24px;
       position: absolute;
       left: 0;
       top: -2px;
+      border: 1px solid #CACED6;
+      border-radius: 50%;
     }
+
+    input[type=checkbox]:checked + label::after,
     input[type=radio]:checked + label::after {
-      @extend .icon-radio-on;
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      background: #00B286;
+      border-radius: 50%;
     }
   }
 
