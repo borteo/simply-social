@@ -126,8 +126,9 @@
     }
   }
 
-  .save {
-    margin-top: 50px;
+  &.save {
+    padding-top: 50px;
+    padding-bottom: 45px;
     .btn {
       padding: 5px 23px;
     }
