@@ -27,7 +27,7 @@ header {
 }
 
 nav.main-nav .main-search {
-  @include respond-to(520) {
+  @include respond-to(575) {
     display: none; 
   }
 }
