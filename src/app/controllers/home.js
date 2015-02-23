@@ -102,6 +102,9 @@ angular.module('simplySocial')
 
     $scope.changeMode = function( idx ) {
       $scope.activeMode = modes[ idx ];
+      if ( idx === 1 ) {
+        alert('Note: This is a grid layout experiment using Angular w/o jQuery');
+      }
     };
 
     $scope.toggleExpand = function( idx ) {

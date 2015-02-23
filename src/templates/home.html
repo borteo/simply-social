@@ -46,71 +46,152 @@
   </div>
 </main>
 
-<section class="small-container main-view">
-
+<section 
+  class="main-view"
+  ng-class="activeMode == 'block' ? 'container' : 'small-container'"
+>
+  
   <div 
-    ng-repeat="post in posts" 
-    class="post-container"
-    ng-class="post.image != null ? 'with-attachment' : ''"
-  > 
-    <div class="post">
-      <div class="post-details">
-        <span class="icon icon-reply"></span>
-        <span class="icon icon-like"></span>
-        <time>{{ post.time }}</time>
-      </div>
-      <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/men/{{ $index + 1 }}.jpg" />
+    ng-if="activeMode == 'block'"
+    class="flowGrid" ng-flow-grid="homePageGird" min-item-width="150"
+  >
+    <!-- TODO: this could be a directive - passing posts as attr -->
+    <div 
+      ng-repeat="post in posts" 
+      class="post-container flowGridItem"
+      ng-class="post.image != null ? 'with-attachment' : ''"
+    > 
+      <div class="post">
+        <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/men/{{ $index + 1 }}.jpg" />
 
-      <div class="message-wrapper">
-        <h3>
-          {{ post.author }}
-        </h3>
-        <p ng-bind-html="post.message"></p>
-      </div>
+        <div class="message-wrapper">
+          <h3>
+            {{ post.author }}
+          </h3>
+          <p ng-bind-html="post.message"></p>
+        </div>
 
-      <p 
-        ng-show="post.expand" 
-        class="expand"
-        ng-click="toggleExpand( $index )"
-      >
-        <span ng-show="post.isCollapsed">Expand</span>
-        <span ng-hide="post.isCollapsed">Collapse</span>
-        <span 
-          class="icon icon-arrow-down" 
-          ng-class="post.isCollapsed == true ? '' : 'active'"
-        ></span>
-      </p>
-    </div>
-
-    <div class="replies" ng-hide="post.isCollapsed">
-      <div 
-        class="reply-post" 
-        ng-repeat="reply in post.replies"
-      >
         <div class="post-details">
           <span class="icon icon-reply"></span>
           <span class="icon icon-like"></span>
-          <time>{{ reply.time }}</time>
+          <time>{{ post.time }}</time>
         </div>
-        <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/women/{{ $index + 1 }}.jpg" />
-        <div class="message-wrapper">
-          <h3>
-            {{ reply.author }}
-          </h3>
-          <p ng-bind-html="reply.message"></p>
+      
+        <p 
+          ng-show="post.expand" 
+          class="expand"
+          ng-click="toggleExpand( $index )"
+        >
+          <span ng-show="post.isCollapsed">Expand</span>
+          <span ng-hide="post.isCollapsed">Collapse</span>
+          <span 
+            class="icon icon-arrow-down" 
+            ng-class="post.isCollapsed == true ? '' : 'active'"
+          ></span>
+        </p>
+      </div>
+
+      <div class="replies" ng-hide="post.isCollapsed">
+        <div 
+          class="reply-post" 
+          ng-repeat="reply in post.replies"
+        >
+          <div class="post-details">
+            <span class="icon icon-reply"></span>
+            <span class="icon icon-like"></span>
+            <time>{{ reply.time }}</time>
+          </div>
+          <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/women/{{ $index + 1 }}.jpg" />
+          <div class="message-wrapper">
+            <h3>
+              {{ reply.author }}
+            </h3>
+            <p ng-bind-html="reply.message"></p>
+          </div>
         </div>
+        <div class="reply-post">
+          <input class="reply-input" type="text" name="reply-input" placeholder="Reply..."/>
+        </div>
+
       </div>
-      <div class="reply-post">
-        <input class="reply-input" type="text" name="reply-input" placeholder="Reply..."/>
-      </div>
+
+      <img 
+        ng-if="post.image" 
+        class="attachment" 
+        ng-src="/images/{{ post.image }}" 
+      />
 
     </div>
+  </div>
 
-    <img 
-      ng-if="post.image" 
-      class="attachment" 
-      ng-src="/images/{{ post.image }}" 
-    />
+
+  <div 
+    ng-if="activeMode != 'block'"
+  >
+    <div 
+      ng-repeat="post in posts" 
+      class="post-container"
+      ng-class="post.image != null ? 'with-attachment' : ''"
+    > 
+      <div class="post">
+        <div class="post-details">
+          <span class="icon icon-reply"></span>
+          <span class="icon icon-like"></span>
+          <time>{{ post.time }}</time>
+        </div>
+        <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/men/{{ $index + 1 }}.jpg" />
+
+        <div class="message-wrapper">
+          <h3>
+            {{ post.author }}
+          </h3>
+          <p ng-bind-html="post.message"></p>
+        </div>
+
+        <p 
+          ng-show="post.expand" 
+          class="expand"
+          ng-click="toggleExpand( $index )"
+        >
+          <span ng-show="post.isCollapsed">Expand</span>
+          <span ng-hide="post.isCollapsed">Collapse</span>
+          <span 
+            class="icon icon-arrow-down" 
+            ng-class="post.isCollapsed == true ? '' : 'active'"
+          ></span>
+        </p>
+      </div>
+
+      <div class="replies" ng-hide="post.isCollapsed">
+        <div 
+          class="reply-post" 
+          ng-repeat="reply in post.replies"
+        >
+          <div class="post-details">
+            <span class="icon icon-reply"></span>
+            <span class="icon icon-like"></span>
+            <time>{{ reply.time }}</time>
+          </div>
+          <img class="profile-image" ng-src="http://api.randomuser.me/portraits/thumb/women/{{ $index + 1 }}.jpg" />
+          <div class="message-wrapper">
+            <h3>
+              {{ reply.author }}
+            </h3>
+            <p ng-bind-html="reply.message"></p>
+          </div>
+        </div>
+        <div class="reply-post">
+          <input class="reply-input" type="text" name="reply-input" placeholder="Reply..."/>
+        </div>
+
+      </div>
+
+      <img 
+        ng-if="post.image" 
+        class="attachment" 
+        ng-src="/images/{{ post.image }}" 
+      />
+    </div>
   </div>
 
 </section>

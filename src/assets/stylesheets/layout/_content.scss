@@ -19,9 +19,7 @@
   margin-bottom: 25px;
   position: relative;
   overflow: hidden;
-  &.with-attachment {
-    height: 428px;
-  }
+  
   .post {
     padding: 28px;
     @include respond-to(575) {
@@ -43,6 +41,9 @@
     font-size: 12px;
     cursor: pointer;
     margin-left: 55px;
+    margin-bottom: 28px;
+    width: 65px;
+    float: left;
   }
   .icon-arrow-down {
     @include transition(all 0.3s 0.4s ease);
@@ -53,9 +54,10 @@
 
   .post-details {
     color: #ccc;
-    position: absolute;
-    right: 25px;
-    top: 25px;
+    position: relative;
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 15px;
     span {
       margin-right: 20px;
     }
@@ -79,9 +81,9 @@
   }
 
   .attachment {
-    position: absolute;
-    margin-top: 10px;
-    left: 0;
+    width: 100%;
+    top: 8px;
+    position: relative;
   }
 
   .replies {
@@ -91,6 +93,7 @@
   .reply-post {
     position: relative;
     padding: 28px;
+    margin-top: 28px;
     border-top: 1px solid #eef0f2;
     @include respond-to(575) {
       padding: 18px;
@@ -105,4 +108,17 @@
     width: 100%;
   }
 
+}
+
+/* case for images and grid view */
+.container .post-container.with-attachment {
+  .attachment {
+    width: 100%;
+    margin-bottom: 55px;
+  }
+  .post-details {
+    position: absolute;
+    bottom: 0;
+    right: 25px;
+  }
 }

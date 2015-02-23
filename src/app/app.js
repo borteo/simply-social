@@ -11,7 +11,8 @@
 
 angular.module('simplySocial', [
   'ngRoute',
-  'ngSanitize'
+  'ngSanitize',
+  'ngFlowGrid'
 ])
   .config(function( $routeProvider ) {
     $routeProvider

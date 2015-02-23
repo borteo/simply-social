@@ -1,0 +1,25 @@
+.main-view.container {
+    
+  & > * {
+    box-sizing: border-box;
+  }
+  
+  .flowGrid::before,
+  .flowGrid::after{
+    content: "";
+    display: table;
+  }
+  .flowGrid::after{
+    clear: both;
+  }
+  .flowGridItem { 
+    margin-bottom: 25px;
+  }
+  .flowGridColumn {
+    float: left;
+    padding-left: 25px;
+  }
+  .flowGridColumn:last-of-type {
+    padding-right: 25px;
+  }
+}
